@@ -1,0 +1,35 @@
+replsets:
+  - name: rs0
+    size: 3
+    antiAffinityTopologyKey: "kubernetes.io/hostname"
+    podDisruptionBudget:
+      maxUnavailable: 1
+    resources:
+      limits:
+        cpu: "300m"
+        memory: "0.5G"
+      requests:
+        cpu: "300m"
+        memory: "0.5G"
+    volumeSpec:
+      pvc:
+        resources:
+          requests:
+            storage: 3Gi
+  - name: rs1
+    size: 3
+    antiAffinityTopologyKey: "kubernetes.io/hostname"
+    podDisruptionBudget:
+      maxUnavailable: 1
+    resources:
+      limits:
+        cpu: "300m"
+        memory: "0.5G"
+      requests:
+        cpu: "300m"
+        memory: "0.5G"
+    volumeSpec:
+      pvc:
+        resources:
+          requests:
+            storage: 3Gi
