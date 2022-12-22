@@ -1,0 +1,11 @@
+mongodb:
+  uri: mongodb://clusterAdmin:clusterAdmin123456@mongodb-test-db-psmdb-mongos.mongodb-test.svc.cluster.local:27017/admin?ssl=true&tlsCAFile=/ssl/ca.crt
+
+volumes:
+- name: ssl
+  secret:
+    secretName: mongodb-test-db-psmdb-ssl
+
+volumeMounts:
+- name: ssl
+  mountPath: /ssl
